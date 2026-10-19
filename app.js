@@ -182,3 +182,14 @@ function makeMasterTimeline(films,categories){
  lane.addEventListener('focusin',e=>{const c=e.target.closest('.modern-clip');if(!c)return;const r=lane.getBoundingClientRect(),q=c.getBoundingClientRect();lane.style.setProperty('--playhead',((q.left+q.width/2-r.left)/r.width*100)+'%');});
  return strip;
 }
+
+// Hover preview: on devices with a mouse, a muted clip plays inside the card while the pointer rests on it.
+if(window.matchMedia('(hover: hover) and (pointer: fine)').matches&&!reducedMotion){
+ let hoverTimer=0;
+ function stopPreview(card){clearTimeout(hoverTimer);const v=card.querySelector('.hover-preview');if(v){v.pause();v.remove();}card.classList.remove('previewing');}
+ document.addEventListener('pointerover',e=>{const card=e.target.closest('.project');if(!card||card.querySelector('.hover-preview'))return;const film=films.find(f=>f.id===card.dataset.filmId);if(!film||!film.videoSrc)return;
+  clearTimeout(hoverTimer);hoverTimer=setTimeout(()=>{if(!card.matches(':hover'))return;const v=document.createElement('video');v.className='hover-preview';v.muted=true;v.loop=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.src=film.videoSrc+'#t='+Math.max(1,Math.round((film.previewStart||0)));
+   v.addEventListener('loadeddata',()=>{if(!film.previewStart&&v.duration>8)v.currentTime=Math.min(v.duration*.2,12);v.play().then(()=>card.classList.add('previewing')).catch(()=>{});},{once:true});
+   card.querySelector('.poster').append(v);},220);});
+ document.addEventListener('pointerout',e=>{const card=e.target.closest('.project');if(card&&!card.contains(e.relatedTarget))stopPreview(card);});
+}
