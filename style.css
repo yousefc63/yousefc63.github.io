@@ -402,7 +402,7 @@ html[lang=ar] .hero-composition h1{font-size:clamp(46px,6.2vw,104px)}
 html[lang=ar] .section h2{font-size:clamp(36px,5vw,76px)}
 html[lang=ar] .ico-arrow{transform:scaleX(-1)}
 html[lang=ar] .timeline-strip-label>span::after{content:'  ·  اسحب'!important;background:none!important;padding-right:0!important}
-html[lang=ar] .filmstrip-track,html[lang=ar] .ticker-track,html[lang=ar] .master-lane{direction:ltr}
+html[lang=ar] .filmstrip-track,html[lang=ar] .ticker-track{direction:ltr}
 html[lang=ar] .master-segment-name,html[lang=ar] .clip-title,html[lang=ar] .feature-caption,html[lang=ar] .ticker-track span{direction:rtl}
 @media(max-width:650px){header .lang-switch{padding:10px 11px;font-size:10px}header .nav-cta{padding:11px 12px!important}}
 html[lang=ar] .landscape-filmstrip{direction:ltr}
