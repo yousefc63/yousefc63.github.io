@@ -409,3 +409,8 @@ html[lang=ar] .landscape-filmstrip{direction:ltr}
 @media(max-width:650px){header:has(.lang-switch),header.scrolled:has(.lang-switch){grid-template-columns:minmax(0,1fr) auto 44px auto!important;gap:7px!important}header .lang-switch{order:0!important;margin:0!important}header .menu-toggle,header .contact-dropdown{order:0!important}}
 html[lang=ar] .brand,html[lang=ar] .stat-value,html[lang=ar] .intro-proof b,html[lang=ar] .contact-details,html[lang=ar] .email-row a{direction:ltr}
 html[lang=ar] .brand{flex-direction:row-reverse}
+/* Arabic display font must beat the id-scoped Rostex rules */
+html[lang=ar] :is(#home,#work,#services,#experience,#contact,#who) :is(h1,h2,h3,h1 *,h2 *,h3 *,.title-mask.accent .title-line,.title-mask.accent .text-char,.section h2 em .text-char,.intro-title,.intro-title *,.eyebrow,.hero-role,.hero-role *){font-family:Alexandria,"IBM Plex Sans Arabic",sans-serif!important;-webkit-text-stroke:0!important}
+html[lang=ar] :is(#home,#work,#services,#experience,#contact,#who) :is(.title-mask.accent .title-line,.title-mask.accent .text-char,h2 em,h2 em *,.intro-title em){font-weight:300!important;color:var(--blue)!important}
+html[lang=ar] :is(#home,#work) :is(.category-heading h3,.category-heading h3 *){font-family:Alexandria,sans-serif!important}
+html[lang=ar] .ticker .ticker-track>span:not(.strip-hint){font-family:Alexandria,sans-serif!important;font-weight:300!important}
