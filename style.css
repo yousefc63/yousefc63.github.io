@@ -390,10 +390,10 @@ html body .hero-intro .intro-text-2{font-size:clamp(15px,1.15vw,17px)!important;
 .lang-switch{font-size:12px;letter-spacing:1px;border:1px solid #42424e;border-radius:30px;padding:11px 15px;color:var(--fg);margin-inline-end:10px;line-height:1}
 .lang-switch:hover{border-color:var(--blue);color:#fff}
 html[lang=ar] body,html[lang=ar] body *{font-family:"IBM Plex Sans Arabic",Inter,system-ui,sans-serif!important;letter-spacing:0!important;word-spacing:normal!important}
-html[lang=ar] h1,html[lang=ar] h1 *,html[lang=ar] h2,html[lang=ar] h2 *,html[lang=ar] h3,html[lang=ar] .intro-title,html[lang=ar] .intro-title *,html[lang=ar] .ticker-track,html[lang=ar] .ticker-track *,html[lang=ar] .category-heading h3,html[lang=ar] .stat-value,html[lang=ar] .stat-value *,html[lang=ar] .hero-role,html[lang=ar] .eyebrow,html[lang=ar] nav a,html[lang=ar] .nav-cta,html[lang=ar] .filters button,html[lang=ar] .pill,html[lang=ar] .outline-button{font-family:Alexandria,"IBM Plex Sans Arabic",sans-serif!important}
+html[lang=ar] h1,html[lang=ar] h1 *,html[lang=ar] h2,html[lang=ar] h2 *,html[lang=ar] h3,html[lang=ar] .intro-title,html[lang=ar] .intro-title *,html[lang=ar] .ticker-track,html[lang=ar] .ticker-track *,html[lang=ar] .category-heading h3,html[lang=ar] .stat-value,html[lang=ar] .stat-value *,html[lang=ar] .hero-role,html[lang=ar] .eyebrow,html[lang=ar] nav a,html[lang=ar] .nav-cta,html[lang=ar] .filters button,html[lang=ar] .pill,html[lang=ar] .outline-button{font-family:Lemonada,"IBM Plex Sans Arabic",sans-serif!important}
 html[lang=ar] .brand>span,html[lang=ar] .brand>span *,html[lang=ar] .lang-switch{font-family:Rostex,Arial,sans-serif!important}
 html[lang=ar] h1,html[lang=ar] h2{font-weight:600!important;line-height:1.25!important;text-transform:none}
-html[lang=ar] h2 em,html[lang=ar] .title-mask.accent .title-line,html[lang=ar] .intro-title em{font-family:Alexandria,sans-serif!important;font-weight:300!important;font-style:normal;color:var(--blue);-webkit-text-stroke:0}
+html[lang=ar] h2 em,html[lang=ar] .title-mask.accent .title-line,html[lang=ar] .intro-title em{font-family:Lemonada,sans-serif!important;font-weight:300!important;font-style:normal;color:var(--blue);-webkit-text-stroke:0}
 html[lang=ar] .ticker-track>span:not(.strip-hint){font-weight:300!important;-webkit-text-stroke:0}
 html[lang=ar] p,html[lang=ar] .intro-text,html[lang=ar] .timeline p,html[lang=ar] .service p{line-height:1.9!important}
 html[lang=ar] .hero-intro .intro-text{font-family:"IBM Plex Sans Arabic",sans-serif!important}
@@ -410,7 +410,15 @@ html[lang=ar] .landscape-filmstrip{direction:ltr}
 html[lang=ar] .brand,html[lang=ar] .stat-value,html[lang=ar] .intro-proof b,html[lang=ar] .contact-details,html[lang=ar] .email-row a{direction:ltr}
 html[lang=ar] .brand{flex-direction:row-reverse}
 /* Arabic display font must beat the id-scoped Rostex rules */
-html[lang=ar] :is(#home,#work,#services,#experience,#contact,#who) :is(h1,h2,h3,h1 *,h2 *,h3 *,.title-mask.accent .title-line,.title-mask.accent .text-char,.section h2 em .text-char,.intro-title,.intro-title *,.eyebrow,.hero-role,.hero-role *){font-family:Alexandria,"IBM Plex Sans Arabic",sans-serif!important;-webkit-text-stroke:0!important}
+html[lang=ar] :is(#home,#work,#services,#experience,#contact,#who) :is(h1,h2,h3,h1 *,h2 *,h3 *,.title-mask.accent .title-line,.title-mask.accent .text-char,.section h2 em .text-char,.intro-title,.intro-title *,.eyebrow,.hero-role,.hero-role *){font-family:Lemonada,"IBM Plex Sans Arabic",sans-serif!important;-webkit-text-stroke:0!important}
 html[lang=ar] :is(#home,#work,#services,#experience,#contact,#who) :is(.title-mask.accent .title-line,.title-mask.accent .text-char,h2 em,h2 em *,.intro-title em){font-weight:300!important;color:var(--blue)!important}
-html[lang=ar] :is(#home,#work) :is(.category-heading h3,.category-heading h3 *){font-family:Alexandria,sans-serif!important}
-html[lang=ar] .ticker .ticker-track>span:not(.strip-hint){font-family:Alexandria,sans-serif!important;font-weight:300!important}
+html[lang=ar] :is(#home,#work) :is(.category-heading h3,.category-heading h3 *){font-family:Lemonada,sans-serif!important}
+html[lang=ar] .ticker .ticker-track>span:not(.strip-hint){font-family:Lemonada,sans-serif!important;font-weight:300!important}
+
+/* Arabic headings: Lemonada */
+html[lang=ar] :is(#home,#work,#services,#experience,#contact,#who) :is(h1,h2,h1 *,h2 *,.intro-title,.intro-title *){font-weight:700!important;line-height:1.35!important}
+html[lang=ar] :is(#home,#work,#services,#experience,#contact,#who) :is(.title-mask.accent .title-line,.title-mask.accent .text-char,h2 em,h2 em *,.intro-title em){font-weight:500!important}
+html[lang=ar] .hero-composition h1{font-size:clamp(40px,5.4vw,92px)!important}
+html[lang=ar] .section h2{font-size:clamp(32px,4.4vw,68px)!important}
+html[lang=ar] .intro-title{font-size:clamp(28px,3.2vw,48px)!important}
+html[lang=ar] :is(nav a,.nav-cta,.filters button,.pill,.outline-button,.eyebrow,.hero-role,.ticker-track span){font-weight:500!important}
