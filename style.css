@@ -423,3 +423,8 @@ html[lang=ar] .intro-title{font-size:clamp(28px,3.2vw,48px)!important}
 html[lang=ar] :is(nav a,.nav-cta,.filters button,.pill,.outline-button,.eyebrow,.hero-role,.ticker-track span){font-weight:500!important}
 html[lang=ar] .brand>span,html[lang=ar] .brand>span *{font-family:Lemonada,sans-serif!important;font-weight:600!important;font-size:15px;line-height:1.35}
 @media(max-width:650px){html[lang=ar] .brand>span{font-size:13px}}
+.lang-switch-ar{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif!important;font-size:13px;letter-spacing:0!important;padding:10px 14px}
+/* language switch sits next to Let's talk */
+header .contact-dropdown{display:flex;align-items:center;gap:10px}
+header .contact-dropdown .lang-switch{margin:0!important;order:0!important}
+@media(max-width:650px){header:has(.lang-switch),header.scrolled:has(.lang-switch){grid-template-columns:minmax(0,1fr) 44px auto!important}header .contact-dropdown{gap:7px}}
