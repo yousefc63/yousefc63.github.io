@@ -282,7 +282,7 @@ html,body{overflow-x:clip}
 /* v3.4: simpler background behind the work/videos section — no photo, no timeline pattern, no moving blue spots. */
 #work.section::before,#work.section::after{content:none!important;background:none!important;animation:none!important}
 #work .editing-backdrop{display:none!important}
-#work.section{background:none;border-image:linear-gradient(180deg,#0b0c14 0%,var(--bg) 40%,var(--bg) 100%) fill 0//0 100vmax}
+#work.section{background:linear-gradient(180deg,#0b0c14 0%,var(--bg) 40%,var(--bg) 100%)}
 
 /* v4: one combined edit sequence at the top of the work section */
 .master-timeline{margin:4px 0 56px;padding-bottom:16px}
