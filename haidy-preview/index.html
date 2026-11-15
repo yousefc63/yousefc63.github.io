@@ -70,7 +70,10 @@ h2{font-size:clamp(42px,5.6vw,80px);font-weight:700}
 .gnum{display:block;font-size:12px;letter-spacing:.2em;font-weight:600;color:var(--clay);margin-bottom:10px}.gcount{font-size:13px;color:var(--muted);letter-spacing:.06em}
 .filter i{font-style:normal;font-size:11px;margin-left:8px;opacity:.6}
 .more-wrap{text-align:center;margin-top:46px}.more[hidden]{display:none}.count{font-size:13px;color:var(--muted);margin-bottom:28px}
-.video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 22px}
+.video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 22px;grid-auto-flow:dense;container-type:inline-size;--cols:4;--gx:22px}
+.video-grid .cover{aspect-ratio:auto;height:calc((100cqw - (var(--cols) - 1) * var(--gx)) / var(--cols) * 4 / 3)}
+.video-card.is-wide{grid-column:span 2}
+.cover.wide:before{display:none}.cover.wide img{object-fit:cover!important}
 .video-card{text-align:left;opacity:0;transform:translateY(24px);animation:in .7s forwards;animation-delay:var(--d)}
 @keyframes in{to{opacity:1;transform:none}}
 .cover{position:relative;aspect-ratio:3/4;isolation:isolate;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#e7d3c3,#c9a68c);box-shadow:0 18px 40px #3a231714}
@@ -149,14 +152,14 @@ footer{background:var(--ink);color:#9c8577;border-top:1px solid #f3e6da1c;displa
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s}
 .reveal.on{opacity:1;transform:none}
 @media(max-width:1200px){.stars-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:1000px){.video-grid{grid-template-columns:repeat(3,1fr)}.stars-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contacts{grid-template-columns:1fr 1fr}}
+@media(max-width:1000px){.video-grid{grid-template-columns:repeat(3,minmax(0,1fr));--cols:3}.stars-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contacts{grid-template-columns:1fr 1fr}}
 @media(max-width:800px){
  nav{padding:16px 5%}.links{gap:16px;font-size:13px}.links a:not(.pill):not(.keep){display:none}
  .hero{grid-template-columns:1fr;gap:50px;padding-top:120px;text-align:left}
  .emblem{width:min(330px,84vw);order:-1}.emblem .badge{padding:10px 14px;font-size:12px;bottom:10px;left:-8px}.emblem .badge b{font-size:24px}.emblem .badge2{top:auto;bottom:10px;right:-8px;left:auto}
  .hero-bottom{display:none}
  section{padding-top:96px}
- .video-grid{grid-template-columns:repeat(2,1fr);gap:26px 14px}
+ .video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14px;--cols:2;--gx:14px}
  .about{grid-template-columns:1fr;gap:50px}.about-card{position:relative;top:0}
  .steps{grid-template-columns:1fr}
  .star{padding:24px 16px;gap:12px}.star .ini{width:42px;height:42px;font-size:14px}.star b{font-size:15px}
@@ -352,11 +355,11 @@ const instagram=''; /* e.g. 'https://www.instagram.com/username/' — leave empt
 /* accept a full Drive link in "link" or "id" */
 videos.forEach(v=>{const src=v.link||v.id||'';const m=src.match(/(?:\/d\/|id=)([\w-]{20,})/);if(m)v.id=m[1];else if(src&&!/\//.test(src))v.id=src});
 const thumb=v=>v.thumb||(v.id?`https://drive.google.com/thumbnail?id=${v.id}&sz=w800`:'');
-function fitCover(img){const c=img.parentElement,r=img.naturalWidth/img.naturalHeight;if(r>.85){c.classList.add(r>1.2?'wide':'square');c.style.setProperty('--bg',`url("${img.src}")`)}}
+function fitCover(img){const c=img.parentElement,r=img.naturalWidth/img.naturalHeight;if(r>1.2)c.closest('.video-card')?.classList.add('is-wide');if(r>.85){c.classList.add(r>1.2?'wide':'square');c.style.setProperty('--bg',`url("${img.src}")`)}}
 function noThumb(img){const c=img.parentElement;img.remove();c.insertAdjacentHTML('beforeend','<span class="ph">PLAY VIDEO</span>')}
 if(instagram){document.querySelector('.contacts').insertAdjacentHTML('beforeend',`<a href="${instagram}" target="_blank" rel="noopener"><small>INSTAGRAM</small><span>${instagram.replace(/https?:\/\/(www\.)?instagram\.com\//,'@').replace(/\/$/,'')}</span></a>`);document.querySelector('.contacts').style.gridTemplateColumns='repeat(auto-fit,minmax(220px,1fr))'}
 function card(v,i){const t=thumb(v);const k=videos.indexOf(v);
- return `<button class="video-card" style="--d:${Math.min(i,7)*60}ms" data-k="${k}"><div class="cover ${v.wide?'wide':''}">${t?`<img src="${t}" alt="${v.title}" loading="lazy" onload="fitCover(this)" onerror="noThumb(this)">`:`<span class="ph">VIDEO COMING SOON</span>`}<span class="play"><svg viewBox="0 0 24 24"><path d="M7 4v16l14-8Z"/></svg></span><span class="num">${String(i+1).padStart(2,'0')}</span></div><div class="info"><div><h3 dir="auto">${v.title}</h3><small>${(v.who&&v.category!=='Mai Farouk'?'Official page':v.category).toUpperCase()}</small></div><span>↗</span></div></button>`}
+ return `<button class="video-card${v.wide?' is-wide':''}" style="--d:${Math.min(i,7)*60}ms" data-k="${k}"><div class="cover ${v.wide?'wide':''}">${t?`<img src="${t}" alt="${v.title}" loading="lazy" onload="fitCover(this)" onerror="noThumb(this)">`:`<span class="ph">VIDEO COMING SOON</span>`}<span class="play"><svg viewBox="0 0 24 24"><path d="M7 4v16l14-8Z"/></svg></span><span class="num">${String(i+1).padStart(2,'0')}</span></div><div class="info"><div><h3 dir="auto">${v.title}</h3><small>${(v.who&&v.category!=='Mai Farouk'?'Official page':v.category).toUpperCase()}</small></div><span>↗</span></div></button>`}
 function render(){
  document.getElementById('filters').innerHTML=cats.map(c=>`<button class="filter ${c===active?'active':''}" data-c="${c}">${c}<i>${c==='All'?videos.length:videos.filter(v=>v.category===c).length}</i></button>`).join('');
  const more=document.getElementById('more'),grid=document.getElementById('grid');
