@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Haidy El-Oraby — Video Editor &amp; Videographer</title>
-<meta name="description" content="Haidy El-Oraby — Video editor &amp; videographer from Cairo with 6 years of experience: celebrity pages, weddings, ads and branded content.">
-<meta property="og:title" content="Haidy El-Oraby — Video Editor"><meta property="og:description" content="Video editor &amp; videographer — celebrity pages, weddings, ads and branded content."><meta property="og:image" content="https://yousefc63.github.io/haidy-preview/assets/og.jpg"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#f7f0e9">
+<meta name="description" content="Haidy El-Oraby — Video editor &amp; videographer from Cairo with 6 years of experience: celebrity pages, podcasts, ads and branded content.">
+<meta property="og:title" content="Haidy El-Oraby — Video Editor"><meta property="og:description" content="Video editor &amp; videographer — celebrity pages, podcasts, ads and branded content."><meta property="og:image" content="https://yousefc63.github.io/haidy-preview/assets/og.jpg"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#f7f0e9">
 <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='56' fill='none' stroke='%235a3725' stroke-width='5'/%3E%3Cpath d='M38 32v56M84 32v56M38 60h14' stroke='%235a3725' stroke-width='11' stroke-linecap='round' fill='none'/%3E%3Cpath d='M57 48l20 12-20 12z' fill='%23b8876a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -65,6 +65,10 @@ h2{font-size:clamp(42px,5.6vw,80px);font-weight:700}
 .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
 .filter{padding:10px 18px;border-radius:99px;border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--soft);background:var(--paper);transition:.2s}
 .filter:hover{border-color:var(--clay);color:var(--ink)}.filter.active{background:var(--ink);color:#fbf1e8;border-color:var(--ink)}
+.groups{display:grid;gap:80px}.ghead{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ghead h3{font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-.03em}.ghead p{margin:8px 0 0;color:var(--soft);font-size:15px;max-width:520px}
+.gnum{display:block;font-size:12px;letter-spacing:.2em;font-weight:600;color:var(--clay);margin-bottom:10px}.gcount{font-size:13px;color:var(--muted);letter-spacing:.06em}
+.filter i{font-style:normal;font-size:11px;margin-left:8px;opacity:.6}
 .more-wrap{text-align:center;margin-top:46px}.more[hidden]{display:none}.count{font-size:13px;color:var(--muted);margin-bottom:28px}
 .video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 22px}
 .video-card{text-align:left;opacity:0;transform:translateY(24px);animation:in .7s forwards;animation-delay:var(--d)}
@@ -277,67 +281,69 @@ footer{background:var(--ink);color:#9c8577;border-top:1px solid #f3e6da1c;displa
    - or use src:'videos/name.mp4' + thumb:'assets/name.jpg' for files hosted with the site.
    - wide:true for horizontal (16:9) videos.                                  */
 const videos=[
- {id:"1G4UMFm-yXDm7ZDgVRGrSKCrpGxLHlHwm",title:"يا ملاك",category:"Mai Farouk"},
- {id:"1xvoAMKvz_DHc_EZA-Zgd5OcW-00wu2c_",title:"Mai Farouk — Reel",category:"Mai Farouk"},
- {id:"1Qro86DxK1xmMmkdsnkUujgDWvXzGBtwI",title:"Mai Farouk Mix",category:"Mai Farouk"},
- {id:"1-ZuVQTFeQQaBsXhtqhWWWFIsGFYv1cMT",title:"ألف ليلة وليلة",category:"Mai Farouk"},
- {id:"1cPeV2ZL8MpSpMPieWXP0WE4aArVWzw4A",title:"أين مني",category:"Mai Farouk"},
- {id:"14gUt1w4ml7SLFyBW068EyuVNuNu7tlXV",title:"إزاي أوصفلك",category:"Mai Farouk"},
- {id:"16hz2sCXA6EmBIKLqEf_3Tq0knJaLlnOc",title:"اسأل روحك",category:"Mai Farouk"},
- {id:"1W0qiyfLo_VKs2XLe_OU-X3JstAHVh3PK",title:"افتكرلك إيه",category:"Mai Farouk"},
- {id:"1buAuWjBrAtBOflhFBtO-lqTZnHUbPgRF",title:"الحب كله",category:"Mai Farouk"},
- {id:"1FYIduYUbqcSCMsMUxtlH5Az6EZzUWUGr",title:"الشتا",category:"Mai Farouk"},
- {id:"1Quts6K0ERU4AO5uHC4C0EEm3ayt-puML",title:"آه يا أسمراني",category:"Mai Farouk"},
- {id:"1AVKCaRRw_v6i1HgbR7WGtxi0tMwdd3VX",title:"أيها الساهر",category:"Mai Farouk"},
- {id:"1MAw9VKT56CtRere_Zzh69TOln4SQL-hZ",title:"بتخاصمني حبة",category:"Mai Farouk"},
- {id:"1V7P77k9e10LGx88h-riGZDD8vMhlj0eQ",title:"بتونس بيك",category:"Mai Farouk"},
- {id:"10kReU6XkuxkMhGIOgQ_H_wSOA7vcJA0n",title:"تجهيزات حفلة السنباطي",category:"Mai Farouk"},
- {id:"1XKkpgM-EKyhS4to4teHBCBQ1dWK9nQvm",title:"ريل من حفلة السنباطي",category:"Mai Farouk"},
- {id:"1STLm-Avl-ibKXUcv0rM-Ep_K6xeE7M-w",title:"فلسطين",category:"Mai Farouk"},
- {id:"1HxOSy0G_W4qcRhDKNB-0slk5uk_iqm2S",title:"لسه فاكر",category:"Mai Farouk"},
- {id:"1vgIbxsvFvKfxDJtzaSla4M5Xl13xnL3s",title:"لسه فاكر — Reel",category:"Mai Farouk"},
- {id:"113-iqMwmCKwtsbAaSXdlTTLeJch2CweP",title:"جانا الهوى",category:"Mai Farouk"},
- {id:"1ft7BxReSrx1CnEKk9CpdBsjuScryjNfG",title:"اجعل فؤادي وطن",category:"Mai Farouk"},
- {id:"14GXYK-BwA1xGUXnbkOdnQD8bk618z0w0",title:"افتكرلك إيه — Reel",category:"Mai Farouk"},
- {id:"10cO-PDG7kIajpqEZv7apwAX3UVM0O_Pv",title:"أنا غلطان",category:"Mai Farouk"},
- {id:"11JILRJt-7pHH0K3pSprzb08DRljtHbY8",title:"بعيد عنك",category:"Mai Farouk"},
- {id:"1CDPvIqEvEYHJX8dXTem0faZ3Bfoo8F1C",title:"تكريم",category:"Mai Farouk"},
- {id:"1tpsI--jPUuDYrUL-uu1eUvL-VPGTei7v",title:"كل الحبايب",category:"Mai Farouk"},
- {id:"1ac1zvQppO2JRnfCFanXPRmlSMMu2MNcN",title:"ليلة العيد",category:"Mai Farouk"},
- {id:"10n3bsCCGnAzhwuZff5n4y1Tt9Rcd9jRE",title:"يا شمس يا منورة",category:"Mai Farouk"},
- {id:"1AH3N7r5Lf90Ao33O5t64Eja52nVX0i0F",title:"Mai Farouk — Final Cut",category:"Mai Farouk"},
- {id:"1DxiOCnjjTcMoagXxiM50AG10JS1tUkuf",title:"في يوم وليلة",category:"Mai Farouk"},
- {id:"1A1D9oKRRmI2ncb8F5b1rU4aRKIEiam4b",title:"كدبت عنيا",category:"Mai Farouk"},
- {id:"1slVw_ACwH4t1sk6PdFAtqhJne6bIGq8k",title:"كل شيء بقضاء",category:"Mai Farouk"},
- {id:"1pn91xAw1LluGRx74ZMhqpCXx31-KS2PF",title:"وانتبهنا",category:"Mai Farouk"},
- {id:"1DyKMb5oGp0SoD8h5Hk3L2N3vD0ibTw6Q",title:"وحياتي عندك",category:"Mai Farouk"},
- {id:"1E1pvbfKxGanv4BIYA4Xh6iNWqyC3iiDJ",title:"ومن الشوق رسول",category:"Mai Farouk"},
- {id:"1hqGMGVS3Mv9Bq6S5kARAbIX3lLKoyGbW",title:"Khalid Selim",category:"Khalid Selim"},
- {id:"1gntTFreKDta7mqWFOt4Tb0Vdgp3M3svA",title:"Reham Abdelhakim",category:"Reham Abdelhakim"},
- {id:"1uMEZ8dnVzTXP8JVuictEjsNfKzF89PkK",title:"Noha Hafez",category:"Noha Hafez"},
- {id:"1rwoawl99WYotDDIghz-Ynxtt5vc0MIfP",title:"Eman Abdelghany",category:"Eman Abdelghany"},
- {id:"18FijEpwNC2I3NMwhXW8QmiSjd-orxSq9",title:"Hoda Abdelaziz",category:"Hoda Abdelaziz"},
- {id:"1XruSK42EJM5Ll8Q5LjSg2FZ05t0GiaHV",title:"Wedding Film 01",category:"Weddings"},
- {id:"1zMuTqmU8b5e1pwrxrA72fTBiDG_G7SQt",title:"Promo Video",category:"Ads & Brands"},
- {id:"1MUulA7D2bcv8ZQrtnDc3FlhLrW5blTtV",title:"Wedding Film 02",category:"Weddings"},
- {id:"1-8PWzBW177odL6N_gPIcy7CpsowaFuVQ",title:"Smile Makers — Dr. Dina",category:"Ads & Brands"},
- {id:"16xD-hGjY9HctRY21GBdiyt4NJ2lMjHUB",title:"Progressive Overload",category:"Ads & Brands"},
- {id:"1BP-KJl4Wjn03I-mJOiXtir5YeyQM5SOT",title:"Brand Reel 01",category:"Ads & Brands"},
- {id:"1LQJts_ebniCT609lLUA5OKwkCR14mRcb",title:"Brand Reel 02",category:"Ads & Brands"},
- {id:"1ttVi5GZNLWvE7KC9ylwsg6BnziOH-xa7",title:"Noll",category:"Ads & Brands"}
+ {id:"1G4UMFm-yXDm7ZDgVRGrSKCrpGxLHlHwm",title:"يا ملاك",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1xvoAMKvz_DHc_EZA-Zgd5OcW-00wu2c_",title:"Mai Farouk — Reel",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1Qro86DxK1xmMmkdsnkUujgDWvXzGBtwI",title:"Mai Farouk Mix",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1-ZuVQTFeQQaBsXhtqhWWWFIsGFYv1cMT",title:"ألف ليلة وليلة",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1cPeV2ZL8MpSpMPieWXP0WE4aArVWzw4A",title:"أين مني",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"14gUt1w4ml7SLFyBW068EyuVNuNu7tlXV",title:"إزاي أوصفلك",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"16hz2sCXA6EmBIKLqEf_3Tq0knJaLlnOc",title:"اسأل روحك",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1W0qiyfLo_VKs2XLe_OU-X3JstAHVh3PK",title:"افتكرلك إيه",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1buAuWjBrAtBOflhFBtO-lqTZnHUbPgRF",title:"الحب كله",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1FYIduYUbqcSCMsMUxtlH5Az6EZzUWUGr",title:"الشتا",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1Quts6K0ERU4AO5uHC4C0EEm3ayt-puML",title:"آه يا أسمراني",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1AVKCaRRw_v6i1HgbR7WGtxi0tMwdd3VX",title:"أيها الساهر",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1MAw9VKT56CtRere_Zzh69TOln4SQL-hZ",title:"بتخاصمني حبة",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1V7P77k9e10LGx88h-riGZDD8vMhlj0eQ",title:"بتونس بيك",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"10kReU6XkuxkMhGIOgQ_H_wSOA7vcJA0n",title:"تجهيزات حفلة السنباطي",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1XKkpgM-EKyhS4to4teHBCBQ1dWK9nQvm",title:"ريل من حفلة السنباطي",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1STLm-Avl-ibKXUcv0rM-Ep_K6xeE7M-w",title:"فلسطين",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1HxOSy0G_W4qcRhDKNB-0slk5uk_iqm2S",title:"لسه فاكر",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1vgIbxsvFvKfxDJtzaSla4M5Xl13xnL3s",title:"لسه فاكر — Reel",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"113-iqMwmCKwtsbAaSXdlTTLeJch2CweP",title:"جانا الهوى",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1ft7BxReSrx1CnEKk9CpdBsjuScryjNfG",title:"اجعل فؤادي وطن",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"14GXYK-BwA1xGUXnbkOdnQD8bk618z0w0",title:"افتكرلك إيه — Reel",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"10cO-PDG7kIajpqEZv7apwAX3UVM0O_Pv",title:"أنا غلطان",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"11JILRJt-7pHH0K3pSprzb08DRljtHbY8",title:"بعيد عنك",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1CDPvIqEvEYHJX8dXTem0faZ3Bfoo8F1C",title:"تكريم",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1tpsI--jPUuDYrUL-uu1eUvL-VPGTei7v",title:"كل الحبايب",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1ac1zvQppO2JRnfCFanXPRmlSMMu2MNcN",title:"ليلة العيد",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"10n3bsCCGnAzhwuZff5n4y1Tt9Rcd9jRE",title:"يا شمس يا منورة",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1AH3N7r5Lf90Ao33O5t64Eja52nVX0i0F",title:"Mai Farouk — Final Cut",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1DxiOCnjjTcMoagXxiM50AG10JS1tUkuf",title:"في يوم وليلة",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1A1D9oKRRmI2ncb8F5b1rU4aRKIEiam4b",title:"كدبت عنيا",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1slVw_ACwH4t1sk6PdFAtqhJne6bIGq8k",title:"كل شيء بقضاء",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1pn91xAw1LluGRx74ZMhqpCXx31-KS2PF",title:"وانتبهنا",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1DyKMb5oGp0SoD8h5Hk3L2N3vD0ibTw6Q",title:"وحياتي عندك",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1E1pvbfKxGanv4BIYA4Xh6iNWqyC3iiDJ",title:"ومن الشوق رسول",category:"Mai Farouk",who:"Mai Farouk"},
+ {id:"1hqGMGVS3Mv9Bq6S5kARAbIX3lLKoyGbW",title:"Khalid Selim",category:"Star Pages",who:"Khalid Selim"},
+ {id:"1gntTFreKDta7mqWFOt4Tb0Vdgp3M3svA",title:"Reham Abdelhakim",category:"Star Pages",who:"Reham Abdelhakim"},
+ {id:"1uMEZ8dnVzTXP8JVuictEjsNfKzF89PkK",title:"Noha Hafez",category:"Star Pages",who:"Noha Hafez"},
+ {id:"1rwoawl99WYotDDIghz-Ynxtt5vc0MIfP",title:"Eman Abdelghany",category:"Star Pages",who:"Eman Abdelghany"},
+ {id:"18FijEpwNC2I3NMwhXW8QmiSjd-orxSq9",title:"Hoda Abdelaziz",category:"Star Pages",who:"Hoda Abdelaziz"},
+ {id:"1XruSK42EJM5Ll8Q5LjSg2FZ05t0GiaHV",title:"Podcast Clip",category:"Talking Heads"},
+ {id:"1zMuTqmU8b5e1pwrxrA72fTBiDG_G7SQt",title:"Promo Video",category:"Promos & Cinematic"},
+ {id:"1MUulA7D2bcv8ZQrtnDc3FlhLrW5blTtV",title:"Talking-Head Reel",category:"Talking Heads"},
+ {id:"1-8PWzBW177odL6N_gPIcy7CpsowaFuVQ",title:"Smile Makers \u2014 Dr. Dina",category:"Talking Heads"},
+ {id:"16xD-hGjY9HctRY21GBdiyt4NJ2lMjHUB",title:"Progressive Overload",category:"Talking Heads"},
+ {id:"1BP-KJl4Wjn03I-mJOiXtir5YeyQM5SOT",title:"Captioned Reel",category:"Talking Heads"},
+ {id:"1LQJts_ebniCT609lLUA5OKwkCR14mRcb",title:"Cinematic Reel",category:"Promos & Cinematic"},
+ {id:"1ttVi5GZNLWvE7KC9ylwsg6BnziOH-xa7",title:"Noll \u2014 Documentary",category:"Promos & Cinematic"}
 ];
 const stars=['Mai Farouk','Khalid Selim','Reham Abdelhakim','Noha Hafez','Eman Abdelghany','Hoda Abdelaziz','Majed El-Kedwany','Dr. Mai Samir','Mohamed El-Amrousy','Lekaa El-Khamissy'];
-const tags=['VIDEO EDITING','VIDEOGRAPHY','CELEBRITY CONTENT','WEDDING FILMS','ADS & BRANDED VIDEO','VISUAL STORYTELLING'];
+const tags=['VIDEO EDITING','VIDEOGRAPHY','CELEBRITY CONTENT','PODCASTS & TALKING HEADS','ADS & PROMOS','VISUAL STORYTELLING'];
 /* ============================================ */
 
 document.getElementById('yr').textContent=new Date().getFullYear();
 document.getElementById('track').innerHTML=[...tags,...tags].map(t=>`<span>${t}</span><i>✳</i>`).join('');
 
-const order=['Mai Farouk','Khalid Selim','Reham Abdelhakim','Noha Hafez','Eman Abdelghany','Hoda Abdelaziz','Weddings','Ads & Brands'];
-const cats=['All',...order.filter(c=>videos.some(v=>v.category===c))];let active='All',shown=12;
-const has=s=>{const n=videos.filter(v=>v.category===s).length;return n||0};
-/* "All": round-robin across categories so the grid opens varied */
-function allOrder(){const q=order.map(c=>videos.filter(v=>v.category===c));const out=[];while(q.some(x=>x.length))q.forEach(x=>{if(x.length)out.push(x.shift())});return out}
+const groups=[
+ {c:'Mai Farouk',t:'Mai Farouk — songs &amp; concerts',d:'Reels, live performances and song clips for Mai Farouk\'s official pages.'},
+ {c:'Star Pages',t:'Star pages',d:'Social content for artists and public figures.'},
+ {c:'Talking Heads',t:'Talking heads &amp; podcasts',d:'Experts, coaches and creators — cut tight, captioned and easy to watch.'},
+ {c:'Promos &amp; Cinematic'.replace('&amp;','&'),t:'Promos &amp; cinematic',d:'Promotional, documentary and mood-driven edits.'}];
+const cats=['All',...groups.map(g=>g.c)];let active='All',shown=12;
+const byWho=s=>videos.filter(v=>v.who===s);const has=s=>byWho(s).length;
 document.getElementById('starsGrid').innerHTML=stars.map(s=>{const ini=s.replace('Dr. ','').split(/[\s-]+/).filter(Boolean).map(w=>w[0]).slice(0,2).join('');return `<${has(s)?'button data-star="'+s+'"':'div'} class="star"><div class="ini">${ini}</div><div><b>${s}</b><small>${has(s)?has(s)+(has(s)>1?' EDITS':' EDIT')+' ↗':'OFFICIAL PAGE'}</small></div></${has(s)?'button':'div'}>`}).join('');
 const instagram=''; /* e.g. 'https://www.instagram.com/username/' — leave empty to hide */
 /* accept a full Drive link in "link" or "id" */
@@ -346,24 +352,35 @@ const thumb=v=>v.thumb||(v.id?`https://drive.google.com/thumbnail?id=${v.id}&sz=
 function fitCover(img){const c=img.parentElement,r=img.naturalWidth/img.naturalHeight;if(r>.85){c.classList.add(r>1.2?'wide':'square');c.style.setProperty('--bg',`url("${img.src}")`)}}
 function noThumb(img){const c=img.parentElement;img.remove();c.insertAdjacentHTML('beforeend','<span class="ph">PLAY VIDEO</span>')}
 if(instagram){document.querySelector('.contacts').insertAdjacentHTML('beforeend',`<a href="${instagram}" target="_blank" rel="noopener"><small>INSTAGRAM</small><span>${instagram.replace(/https?:\/\/(www\.)?instagram\.com\//,'@').replace(/\/$/,'')}</span></a>`);document.querySelector('.contacts').style.gridTemplateColumns='repeat(auto-fit,minmax(220px,1fr))'}
+function card(v,i){const t=thumb(v);const k=videos.indexOf(v);
+ return `<button class="video-card" style="--d:${Math.min(i,7)*60}ms" data-k="${k}"><div class="cover ${v.wide?'wide':''}">${t?`<img src="${t}" alt="${v.title}" loading="lazy" onload="fitCover(this)" onerror="noThumb(this)">`:`<span class="ph">VIDEO COMING SOON</span>`}<span class="play"><svg viewBox="0 0 24 24"><path d="M7 4v16l14-8Z"/></svg></span><span class="num">${String(i+1).padStart(2,'0')}</span></div><div class="info"><div><h3 dir="auto">${v.title}</h3><small>${(v.who&&v.category!=='Mai Farouk'?'Official page':v.category).toUpperCase()}</small></div><span>↗</span></div></button>`}
 function render(){
- document.getElementById('filters').innerHTML=cats.map(c=>`<button class="filter ${c===active?'active':''}" data-c="${c}">${c}</button>`).join('');
- const full=active==='All'?allOrder():videos.filter(v=>v.category===active);const list=full.slice(0,shown);
- document.getElementById('count').textContent=`Showing ${list.length} of ${full.length} ${full.length===1?'edit':'edits'}`;document.getElementById('more').hidden=list.length>=full.length;
- document.getElementById('grid').innerHTML=list.map((v,i)=>{const t=thumb(v);const k=videos.indexOf(v);
-  return `<button class="video-card" style="--d:${Math.min(i,7)*70}ms" data-k="${k}"><div class="cover ${v.wide?'wide':''}">${t?`<img src="${t}" alt="${v.title}" loading="lazy" onload="fitCover(this)" onerror="noThumb(this)">`:`<span class="ph">VIDEO COMING SOON</span>`}<span class="play"><svg viewBox="0 0 24 24"><path d="M7 4v16l14-8Z"/></svg></span><span class="num">${String(i+1).padStart(2,'0')}</span></div><div class="info"><div><h3>${v.title}</h3><small>${v.category.toUpperCase()}</small></div><span>↗</span></div></button>`}).join('');
+ document.getElementById('filters').innerHTML=cats.map(c=>`<button class="filter ${c===active?'active':''}" data-c="${c}">${c}<i>${c==='All'?videos.length:videos.filter(v=>v.category===c).length}</i></button>`).join('');
+ const more=document.getElementById('more'),grid=document.getElementById('grid');
+ if(active==='All'){
+  document.getElementById('count').textContent=`${videos.length} edits in ${groups.length} collections`;more.hidden=true;
+  grid.className='groups';
+  grid.innerHTML=groups.map((g,gi)=>{const l=videos.filter(v=>v.category===g.c);if(!l.length)return'';const lim=g.c==='Mai Farouk'?8:99;
+   return `<div class="group"><div class="ghead"><div><span class="gnum">0${gi+1}</span><h3>${g.t}</h3><p>${g.d}</p></div>${l.length>lim?`<button class="textlink" data-c="${g.c}">See all ${l.length} ↗</button>`:`<span class="gcount">${l.length} ${l.length>1?'edits':'edit'}</span>`}</div><div class="video-grid">${l.slice(0,lim).map(card).join('')}</div></div>`}).join('');
+ }else{
+  const full=videos.filter(v=>v.category===active),list=full.slice(0,shown);grid.className='video-grid';
+  document.getElementById('count').textContent=`Showing ${list.length} of ${full.length} ${full.length===1?'edit':'edits'}`;more.hidden=list.length>=full.length;
+  grid.innerHTML=list.map(card).join('');
+ }
 }
-document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(b){active=b.dataset.c;shown=12;render()}});render();
+function pick(c){active=c;shown=12;render()}
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(b)pick(b.dataset.c)});
+document.getElementById('grid').addEventListener('click',e=>{const b=e.target.closest('.ghead [data-c]');if(b){pick(b.dataset.c);document.getElementById('work').scrollIntoView()}});render();
 document.getElementById('more').onclick=()=>{shown+=12;render()};
-document.getElementById('starsGrid').addEventListener('click',e=>{const b=e.target.closest('[data-star]');if(!b)return;active=b.dataset.star;shown=12;render();document.getElementById('work').scrollIntoView()});
+document.getElementById('starsGrid').addEventListener('click',e=>{const b=e.target.closest('[data-star]');if(!b)return;const l=byWho(b.dataset.star);if(l.length===1){openVideo(l[0]);return}pick(l[0].category);document.getElementById('work').scrollIntoView()});
 
 const modal=document.getElementById('modal'),player=document.getElementById('player');
-document.getElementById('grid').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b)return;const v=videos[b.dataset.k];
- if(!v.id&&!v.src)return;
+function openVideo(v,cv){if(!v.id&&!v.src)return;
  document.getElementById('mTitle').textContent=v.title;
- const cv=b.querySelector('.cover'),wide=v.wide||cv.classList.contains('wide'),sq=cv.classList.contains('square');player.className='player'+(wide?' wide':'');player.style.setProperty('--r',wide?'16/9':sq?'1/1':'9/16');
+ const cls=cv?cv.className:'',wide=v.wide||cls.includes('wide'),sq=cls.includes('square');player.className='player'+(wide?' wide':'');player.style.setProperty('--r',wide?'16/9':sq?'1/1':'9/16');
  player.innerHTML=v.src?`<video src="${v.src}" controls autoplay playsinline></video>`:`<iframe src="https://drive.google.com/file/d/${v.id}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
- modal.showModal()});
+ modal.showModal()}
+document.getElementById('grid').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b)return;openVideo(videos[b.dataset.k],b.querySelector('.cover'))});
 function closeM(){player.innerHTML='';modal.close()}
 document.getElementById('mClose').onclick=closeM;modal.addEventListener('click',e=>{if(e.target.classList.contains('modal-in'))closeM()});modal.addEventListener('close',()=>player.innerHTML='');
 
