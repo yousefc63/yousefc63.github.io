@@ -328,10 +328,12 @@ const videos=[
  {id:"16xD-hGjY9HctRY21GBdiyt4NJ2lMjHUB",title:"Progressive Overload",category:"Talking Heads"},
  {id:"1BP-KJl4Wjn03I-mJOiXtir5YeyQM5SOT",title:"Captioned Reel",category:"Talking Heads"},
  {id:"1LQJts_ebniCT609lLUA5OKwkCR14mRcb",title:"Cinematic Reel",category:"Promos & Cinematic"},
- {id:"1ttVi5GZNLWvE7KC9ylwsg6BnziOH-xa7",title:"Noll \u2014 Documentary",category:"Promos & Cinematic"}
+ {id:"1ttVi5GZNLWvE7KC9ylwsg6BnziOH-xa7",title:"Noll \u2014 Documentary",category:"Promos & Cinematic"},
+ {id:"1qCAIaRRPfMPvnzrwHBwJAUFG49n6VQqQ",title:"Wedding Film 01",category:"Weddings"},
+ {id:"18N1P2CzFCKvffLmqkcd93MUQoA_CVDKl",title:"Wedding Film 02",category:"Weddings"}
 ];
 const stars=['Mai Farouk','Khalid Selim','Reham Abdelhakim','Noha Hafez','Eman Abdelghany','Hoda Abdelaziz','Majed El-Kedwany','Dr. Mai Samir','Mohamed El-Amrousy','Lekaa El-Khamissy'];
-const tags=['VIDEO EDITING','VIDEOGRAPHY','CELEBRITY CONTENT','PODCASTS & TALKING HEADS','ADS & PROMOS','VISUAL STORYTELLING'];
+const tags=['VIDEO EDITING','VIDEOGRAPHY','CELEBRITY CONTENT','PODCASTS & TALKING HEADS','WEDDING FILMS','ADS & PROMOS','VISUAL STORYTELLING'];
 /* ============================================ */
 
 document.getElementById('yr').textContent=new Date().getFullYear();
@@ -341,6 +343,7 @@ const groups=[
  {c:'Mai Farouk',t:'Mai Farouk — songs &amp; concerts',d:'Reels, live performances and song clips for Mai Farouk\'s official pages.'},
  {c:'Star Pages',t:'Star pages',d:'Social content for artists and public figures.'},
  {c:'Talking Heads',t:'Talking heads &amp; podcasts',d:'Experts, coaches and creators — cut tight, captioned and easy to watch.'},
+ {c:'Weddings',t:'Weddings',d:'Wedding days filmed and cut into stories worth reliving.'},
  {c:'Promos &amp; Cinematic'.replace('&amp;','&'),t:'Promos &amp; cinematic',d:'Promotional, documentary and mood-driven edits.'}];
 const cats=['All',...groups.map(g=>g.c)];let active='All',shown=12;
 const byWho=s=>videos.filter(v=>v.who===s);const has=s=>byWho(s).length;
