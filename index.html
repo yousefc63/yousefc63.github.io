@@ -30,6 +30,13 @@ html[lang=ar] #intro .intro-role{font-family:"IBM Plex Sans Arabic",sans-serif;l
 #intro.is-flying .intro-logo video{filter:none;transition:filter .6s ease}
 #intro.is-landed .intro-logo video{opacity:0;transition:opacity .35s ease}
 #intro.no-target .intro-logo{transform:scale(.85);opacity:0;transition:transform .9s cubic-bezier(.4,0,.2,1),opacity .7s ease}
+#intro .intro-still{position:absolute;left:17.8%;top:0;width:72.1%;height:97.6%;opacity:0;display:none;pointer-events:none}
+#intro.mp4-mode .intro-still{display:block}
+#intro.mp4-mode .intro-logo{will-change:auto}
+#intro.mp4-mode .intro-logo video{mix-blend-mode:screen;filter:none!important}
+#intro.mp4-mode.is-out .intro-still{opacity:1;transition:opacity .2s ease}
+#intro.mp4-mode.is-out .intro-logo video{opacity:0;transition:opacity .2s ease}
+#intro.mp4-mode.is-landed .intro-still{opacity:0;transition:opacity .35s ease}
 @media(prefers-reduced-motion:reduce){#intro{display:none!important}}
 </style>
 <script>(function(){try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(e){}var d=document.documentElement;d.classList.add('intro-on','intro-hold');setTimeout(function(){d.classList.remove('intro-hold');if(d.classList.contains('intro-on')){d.classList.remove('intro-on');var e=document.getElementById('intro');if(e)e.remove();}},7000);})();</script><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Yousef Abokamar — Video editor and content creator. Explore commercial, architectural, event and social media video work."><meta name="theme-color" content="#090a10"><title>Yousef Abokamar — Video Editor & Content Creator</title><!-- SITE_URL: when you move to your own domain, replace the URL below everywhere in this block -->
@@ -40,9 +47,9 @@ html[lang=ar] #intro .intro-role{font-family:"IBM Plex Sans Arabic",sans-serif;l
 <link rel="preload" href="assets/portrait-left-shadow.webp" as="image" type="image/webp" fetchpriority="high"><link rel="preload" href="assets/fonts/Rostex-Regular.woff" as="font" type="font/woff" crossorigin>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Yousef Abokamar", "jobTitle": "Video Editor & Content Creator", "url": "https://yousefc63.github.io/", "image": "https://yousefc63.github.io/assets/og-image.jpg", "email": "mailto:yousefabokamar25@gmail.com", "address": {"@type": "PostalAddress", "addressCountry": "EG"}, "alumniOf": "Tanta University, Faculty of Engineering", "knowsAbout": ["Video Editing", "Motion Graphics", "Color Grading", "Adobe Premiere Pro", "Adobe After Effects"], "sameAs": ["https://www.linkedin.com/in/yousef-abokamar-b58677314", "https://www.instagram.com/abokamar63", "https://www.behance.net/yousefabokamar", "https://www.facebook.com/share/1ExhpyMuTG/?mibextid=wwXIfr"]}</script>
 <link rel="stylesheet" href="style.css?v=20261121a"></head>
-<body><div id="intro" aria-hidden="true"><div class="intro-glow"></div><div class="intro-logo"><video muted playsinline preload="none" disablepictureinpicture><source src="assets/intro/logo-intro.webm" type="video/webm; codecs=vp9"><source src="assets/intro/logo-intro.mp4" type="video/mp4"></video></div><div class="intro-bar"><i></i></div></div>
+<body><div id="intro" aria-hidden="true"><div class="intro-glow"></div><div class="intro-logo"><video muted playsinline preload="none" disablepictureinpicture></video><img class="intro-still" src="assets/logo.png" alt=""></div><div class="intro-bar"><i></i></div></div>
 <script>(function(){var d=document.documentElement,el=document.getElementById('intro');if(!el)return;if(!d.classList.contains('intro-on')){d.classList.remove('intro-hold');el.remove();return;}
-var v=el.querySelector('video'),box=el.querySelector('.intro-logo'),done=false,t=[];
+var v=el.querySelector('video'),box=el.querySelector('.intro-logo'),done=false,t=[];var ua=navigator.userAgent,apple=/iP(hone|ad|od)/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)||(/Safari\//.test(ua)&&!/Chrome|Chromium|CriOS|Edg|OPR|Android|Firefox/.test(ua));if(apple||!v.canPlayType('video/webm; codecs="vp9"')){el.classList.add('mp4-mode');v.poster='assets/intro/logo-intro-poster.jpg';v.src='assets/intro/logo-intro.mp4';}else{v.src='assets/intro/logo-intro.webm';}
 function fly(){var img=document.querySelector('header .brand img');var r=img&&img.getBoundingClientRect();if(!r||!r.width||r.top>innerHeight){el.classList.add('no-target');d.classList.remove('intro-hold');return;}
 var b=box.getBoundingClientRect();var L={x:b.left+.178*b.width,y:b.top,w:.721*b.width,h:.976*b.height};
 var ar=.78125,dw=r.width,dh=r.width/ar;if(dh>r.height){dh=r.height;dw=dh*ar;}
