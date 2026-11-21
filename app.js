@@ -198,8 +198,11 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches&&!reducedMoti
  let hoverTimer=0;
  function stopPreview(card){clearTimeout(hoverTimer);const v=card.querySelector('.hover-preview');if(v){v.pause();v.remove();}card.classList.remove('previewing');}
  document.addEventListener('pointerover',e=>{const card=e.target.closest('.project');if(!card||card.querySelector('.hover-preview'))return;const film=films.find(f=>f.id===card.dataset.filmId);if(!film||!film.videoSrc)return;
-  clearTimeout(hoverTimer);hoverTimer=setTimeout(()=>{if(!card.matches(':hover'))return;const v=document.createElement('video');v.className='hover-preview';v.muted=true;v.loop=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');v.src=film.videoSrc+'#t='+Math.max(1,Math.round((film.previewStart||0)));
-   v.addEventListener('loadeddata',()=>{if(!film.previewStart&&v.duration>8)v.currentTime=Math.min(v.duration*.2,12);v.play().then(()=>card.classList.add('previewing')).catch(()=>{});},{once:true});
+  clearTimeout(hoverTimer);hoverTimer=setTimeout(()=>{if(!card.matches(':hover'))return;const v=document.createElement('video');v.className='hover-preview';v.muted=true;v.loop=true;v.playsInline=true;v.preload='auto';v.setAttribute('aria-hidden','true');const lite=!!film.previewSrc;v.src=lite?film.previewSrc:film.videoSrc+'#t='+Math.max(1,Math.round((film.previewStart||0)));
+   v.addEventListener('loadeddata',()=>{if(!lite&&!film.previewStart&&v.duration>8)v.currentTime=Math.min(v.duration*.2,12);v.play().then(()=>card.classList.add('previewing')).catch(()=>{});},{once:true});
    card.querySelector('.poster').append(v);},220);});
  document.addEventListener('pointerout',e=>{const card=e.target.closest('.project');if(card&&!card.contains(e.relatedTarget))stopPreview(card);});
 }
+
+/* perf: pause looping animations while their section is off-screen */
+(()=>{if(!('IntersectionObserver'in window))return;const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('is-offscreen',!e.isIntersecting)),{rootMargin:'120px 0px'});const watch=()=>document.querySelectorAll('.hero,.ticker,.landscape-filmstrip,.section').forEach(el=>io.observe(el));if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',watch);else watch();})();

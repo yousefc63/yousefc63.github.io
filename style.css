@@ -428,3 +428,5 @@ html[lang=ar] .brand>span,html[lang=ar] .brand>span *{font-family:Lemonada,sans-
 header .contact-dropdown{display:flex;align-items:center;gap:10px}
 header .contact-dropdown .lang-switch{margin:0!important;order:0!important}
 @media(max-width:650px){header:has(.lang-switch),header.scrolled:has(.lang-switch){grid-template-columns:minmax(0,1fr) 44px auto!important}header .contact-dropdown{gap:7px}}
+/* perf: off-screen sections stop animating */
+.is-offscreen,.is-offscreen *,.is-offscreen *::before,.is-offscreen *::after{animation-play-state:paused!important}
