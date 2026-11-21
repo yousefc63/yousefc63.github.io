@@ -21,7 +21,7 @@ html[lang=ar] #intro .intro-word span{transition-delay:0s}
 html[lang=ar] #intro .intro-role{font-family:"IBM Plex Sans Arabic",sans-serif;letter-spacing:.06em;font-size:clamp(10px,.75vw,12px);padding:0}
 #intro .intro-bar{position:absolute;left:50%;bottom:clamp(28px,6vh,56px);width:min(120px,30vw);height:1px;transform:translateX(-50%);background:rgba(255,255,255,.1);overflow:hidden}
 #intro .intro-bar i{position:absolute;inset:0;background:linear-gradient(90deg,#4c79ff,#9e96ff);transform:scaleX(0);transform-origin:left}
-#intro.is-playing .intro-bar i{transform:scaleX(1);transition:transform 2.8s cubic-bezier(.65,0,.35,1)}
+#intro.is-playing .intro-bar i{transform:scaleX(1);transition:transform 2.1s cubic-bezier(.65,0,.35,1)}
 #intro.is-out{background-color:rgba(9,10,16,0);pointer-events:none}
 #intro.is-out .intro-glow{opacity:0;transition:opacity .7s ease}
 #intro.is-out .intro-name,#intro.is-out .intro-bar{opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .5s ease}
@@ -40,7 +40,7 @@ html[lang=ar] #intro .intro-role{font-family:"IBM Plex Sans Arabic",sans-serif;l
 <link rel="preload" href="assets/portrait-left-shadow.webp" as="image" type="image/webp" fetchpriority="high"><link rel="preload" href="assets/fonts/Rostex-Regular.woff" as="font" type="font/woff" crossorigin>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Yousef Abokamar", "jobTitle": "Video Editor & Content Creator", "url": "https://yousefc63.github.io/", "image": "https://yousefc63.github.io/assets/og-image.jpg", "email": "mailto:yousefabokamar25@gmail.com", "address": {"@type": "PostalAddress", "addressCountry": "EG"}, "alumniOf": "Tanta University, Faculty of Engineering", "knowsAbout": ["Video Editing", "Motion Graphics", "Color Grading", "Adobe Premiere Pro", "Adobe After Effects"], "sameAs": ["https://www.linkedin.com/in/yousef-abokamar-b58677314", "https://www.instagram.com/abokamar63", "https://www.behance.net/yousefabokamar", "https://www.facebook.com/share/1ExhpyMuTG/?mibextid=wwXIfr"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lemonada:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap"><link rel="stylesheet" href="style.css?v=20261019i"></head>
-<body><div id="intro" aria-hidden="true"><div class="intro-glow"></div><div class="intro-logo"><video muted playsinline preload="auto" disablepictureinpicture><source src="assets/intro/logo-intro.webm" type="video/webm; codecs=vp9"><source src="assets/intro/logo-intro.mp4" type="video/mp4"></video></div></div>
+<body><div id="intro" aria-hidden="true"><div class="intro-glow"></div><div class="intro-logo"><video muted playsinline preload="auto" disablepictureinpicture><source src="assets/intro/logo-intro.webm" type="video/webm; codecs=vp9"><source src="assets/intro/logo-intro.mp4" type="video/mp4"></video></div><div class="intro-bar"><i></i></div></div>
 <script>(function(){var d=document.documentElement,el=document.getElementById('intro');if(!el)return;if(!d.classList.contains('intro-on')){d.classList.remove('intro-hold');el.remove();return;}
 var v=el.querySelector('video'),box=el.querySelector('.intro-logo'),done=false,t=[];
 function fly(){var img=document.querySelector('header .brand img');var r=img&&img.getBoundingClientRect();if(!r||!r.width||r.top>innerHeight){el.classList.add('no-target');d.classList.remove('intro-hold');return;}
