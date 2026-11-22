@@ -430,3 +430,6 @@ header .contact-dropdown .lang-switch{margin:0!important;order:0!important}
 @media(max-width:650px){header:has(.lang-switch),header.scrolled:has(.lang-switch){grid-template-columns:minmax(0,1fr) 44px auto!important}header .contact-dropdown{gap:7px}}
 /* perf: off-screen sections stop animating */
 .is-offscreen,.is-offscreen *,.is-offscreen *::before,.is-offscreen *::after{animation-play-state:paused!important}
+/* Drive link only as a fallback when a video fails */
+#player #drive-link{display:none!important}
+#player:has(.video-error) #drive-link{display:inline-block!important}
